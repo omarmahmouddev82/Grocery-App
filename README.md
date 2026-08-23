@@ -1,4 +1,4 @@
-Grocery App - Task 10 🛒
+Grocery App 
 
 A Flutter mobile application UI for Login and Sign Up screens built with clean code and reusable components.
 
