@@ -28,7 +28,7 @@ class ShopScreen extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.71),
+            padding: EdgeInsets.symmetric(horizontal: 24.71),
             child: Column(
               children: [
                 SizedBox(height: 16),
@@ -42,7 +42,10 @@ class ShopScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Icon(Icons.location_on, color: Color(0xff4C4F4D)),
+                    Icon(
+                      Icons.location_on, 
+                      color: Color(0xff4C4F4D)
+                    ),
                     Text(
                       "Dhaka, Banassre",
                       style: TextStyle(
