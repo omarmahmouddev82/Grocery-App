@@ -1,4 +1,4 @@
-<img width="460" height="1016" alt="Screenshot 2026-08-23 182522" src="https://github.com/user-attachments/assets/0c1de10d-438b-40ca-9985-51dd848e63c0" /># Grocery App - Task 10 🛒
+Grocery App - Task 10 🛒
 
 A Flutter mobile application UI for Login and Sign Up screens built with clean code and reusable components.
 
