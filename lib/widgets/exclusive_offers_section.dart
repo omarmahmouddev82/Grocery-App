@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app_task10/screens/shop_screen.dart';
+import 'package:grocery_app_task10/screens/product_detail_screen.dart';
 import 'package:grocery_app_task10/widgets/product_card.dart';
 
 class ExclusiveOffersSection extends StatelessWidget {
@@ -37,10 +37,10 @@ class ExclusiveOffersSection extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.71),
+          padding: const EdgeInsets.symmetric(horizontal: 24.71),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               Text(
                 "Exclusive Offer",
                 style: TextStyle(
@@ -61,25 +61,37 @@ class ExclusiveOffersSection extends StatelessWidget {
           ),
         ),
 
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
 
         SizedBox(
           height: 250,
           child: ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 24.71),
+            padding: const EdgeInsets.symmetric(horizontal: 24.71),
             physics: const AlwaysScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemCount: exclusiveOffers.length,
-            separatorBuilder: (context, index) => SizedBox(width: 15),
+            separatorBuilder: (context, index) => const SizedBox(width: 15),
             itemBuilder: (context, index) {
               final item = exclusiveOffers[index];
 
-              return ProductCard(
-                title: item.title,
-                subtitle: item.subtitle,
-                price: item.price,
-                imagePath: item.imagePath,
-                onAddTap: () {},
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductDetailScreen(
+                        product: item,
+                      ),
+                    ),
+                  );
+                },
+                child: ProductCard(
+                  title: item.title,
+                  subtitle: item.subtitle,
+                  price: item.price,
+                  imagePath: item.imagePath,
+                  onAddTap: () {},
+                ),
               );
             },
           ),
