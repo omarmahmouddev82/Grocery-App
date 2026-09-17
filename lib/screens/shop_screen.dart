@@ -24,53 +24,58 @@ class ShopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.71),
-            child: Column(
-              children: [
-                SizedBox(height: 16),
-                Image.asset(
-                  "assets/image/carrot.png", 
-                  width: 30,
-                ),
-
-                SizedBox(height: 7.6),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.location_on, 
-                      color: Color(0xff4C4F4D)
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: const [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.71),
+                child: Column(
+                  children: [
+                    SizedBox(height: 16),
+                    Image(
+                      image: AssetImage("assets/image/carrot.png"),
+                      width: 30,
                     ),
-                    Text(
-                      "Dhaka, Banassre",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff4C4F4D),
-                      ),
+                    SizedBox(height: 7.6),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: Color(0xff4C4F4D),
+                        ),
+                        SizedBox(width: 4),
+                        Text(
+                          "Dhaka, Banassre",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff4C4F4D),
+                          ),
+                        ),
+                      ],
                     ),
+                    SizedBox(height: 20),
+                    HomeSearchField(),
+                    SizedBox(height: 20),
+                    HomeSlider(),
+                    SizedBox(height: 30),
                   ],
                 ),
-                SizedBox(height: 20),
-                HomeSearchField(),
-                SizedBox(height: 20),
-                HomeSlider(),
-                SizedBox(height: 30),
-              ],
-            ),
+              ),
+              ExclusiveOffersSection(),
+              SizedBox(height: 20),
+              BestSellingSection(),
+              SizedBox(height: 30),
+              GroceriesSection(),
+              SizedBox(height: 30),
+            ],
           ),
-          ExclusiveOffersSection(),
-          SizedBox(height: 20),
-          BestSellingSection(),
-          SizedBox(height: 30),
-          GroceriesSection(),
-          SizedBox(height: 30),
-        ],
+        ),
       ),
     );
   }

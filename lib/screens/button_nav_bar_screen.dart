@@ -19,7 +19,7 @@ class _ButtonNavBarScreenState extends State<ButtonNavBarScreen> {
     ShopScreen(),
     ExploreScreen(),
     CartScreen(),
-    FavotireScreen(),
+    FavoriteScreen(),
     AccountScreen(),
   ];
 
@@ -28,7 +28,9 @@ class _ButtonNavBarScreenState extends State<ButtonNavBarScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      body: SafeArea(child: screens [cuttentIndex]),
+      body: SafeArea(
+        child: screens [cuttentIndex]
+      ),
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: cuttentIndex,

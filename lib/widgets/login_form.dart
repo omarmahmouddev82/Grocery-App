@@ -7,65 +7,60 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 40,),
+        const SizedBox(height: 40),
         TextFormField(
-          onTapOutside: (value){
-            FocusScope.of(context).unfocus();
-          },
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: "Email",
-            labelStyle: const TextStyle(color: Color(0xFF7C7C7C)),
-            floatingLabelStyle: const TextStyle(color: Color(0xFF53B175)),
+            labelStyle: TextStyle(color: Color(0xFF7C7C7C)),
+            floatingLabelStyle: TextStyle(color: Color(0xFF53B175)),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Color(0xffE2E2E2),
-              )
+                color: Color(0xFFE2E2E2),
+              ),
             ),
             focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: Color(0xFF53B175),
-              )
-            )
+              ),
+            ),
           ),
         ),
-        SizedBox(height: 30,),
+        const SizedBox(height: 30),
 
-        // password
+        // Password
         TextFormField(
-          onTapOutside: (value){
-            FocusScope.of(context).unfocus();
-          },
+          obscureText: true,
           decoration: InputDecoration(
             labelText: "Password",
             labelStyle: const TextStyle(color: Color(0xFF7C7C7C)),
             floatingLabelStyle: const TextStyle(color: Color(0xFF53B175)),
-            enabledBorder: UnderlineInputBorder(
+            enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Color(0xffE2E2E2),
-              )
+                color: Color(0xFFE2E2E2),
+              ),
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
                 color: Color(0xFF53B175),
-              )
+              ),
             ),
             suffixIcon: IconButton(
               icon: const Icon(Icons.visibility_off),
-              onPressed: (){},
-            )
+              onPressed: () {},
+            ),
           ),
         ),
-        SizedBox(height: 20,),
-        Align(
+        const SizedBox(height: 20),
+        const Align(
           alignment: Alignment.centerRight,
           child: Text(
             "Forgot Password?",
             style: TextStyle(
-              color: Color(0xff181725),
+              color: Color(0xFF181725),
             ),
           ),
         ),
-        SizedBox(height: 20,),
+        const SizedBox(height: 20),
       ],
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app_task10/screens/button_nav_bar_screen.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/dont_have_widget.dart';
 import '../widgets/login_header.dart';
@@ -26,7 +27,12 @@ class SignUpScreen extends StatelessWidget {
                 CustomButton(
                   text: "Sign Up",
                   onTap: () {
-                    print("Sign Up Action");
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ButtonNavBarScreen(),
+                      )
+                    );
                   },
                 ),
                 const SizedBox(height: 25),

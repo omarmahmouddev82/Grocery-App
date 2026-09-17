@@ -76,6 +76,7 @@ class _ProductHeaderState extends State<ProductHeader> {
                   ),
                 ],
               ),
+              // favorite
               IconButton(
                 icon: Icon(
                   isFavorite ? Icons.favorite : Icons.favorite_border,
@@ -93,7 +94,7 @@ class _ProductHeaderState extends State<ProductHeader> {
         ),
         const SizedBox(height: 25),
 
-        // العداد + السعر
+        // counter + price
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Row(

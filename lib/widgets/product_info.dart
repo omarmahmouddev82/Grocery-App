@@ -16,7 +16,7 @@ class ProductInfo extends StatelessWidget {
         children: [
           const Divider(color: Color(0xFFE2E2E2), height: 1),
           
-          // 1. ExpansionTile للـ Product Detail
+          // Product Detail
           Theme(
             data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
             child: ExpansionTile(
@@ -29,6 +29,7 @@ class ProductInfo extends StatelessWidget {
                   color: Color(0xFF181725),
                 ),
               ),
+              // description
               children: [
                 Text(
                   description,
@@ -44,7 +45,7 @@ class ProductInfo extends StatelessWidget {
           ),
           const Divider(color: Color(0xFFE2E2E2), height: 1),
       
-          // 2. صف الـ Nutritions
+          // Nutritions
           ListTile(
             contentPadding: EdgeInsets.zero,
             title: const Text(
@@ -81,7 +82,7 @@ class ProductInfo extends StatelessWidget {
           ),
           const Divider(color: Color(0xFFE2E2E2), height: 1),
       
-          // 3. صف الـ Review
+          // Review
           ListTile(
             contentPadding: EdgeInsets.zero,
             title: const Text(
@@ -96,9 +97,8 @@ class ProductInfo extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Row(
-                  children: List.generate(
-                    5,
-                    (index) => const Icon(
+                  children: List.generate(5,(index) => const Icon(
+                    
                       Icons.star,
                       color: Color(0xFFF3603F),
                       size: 18,
