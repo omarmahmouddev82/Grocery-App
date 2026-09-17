@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app_task10/screens/beverages_screen.dart';
 
 class ExploreProductsGrid extends StatelessWidget {
   const ExploreProductsGrid({super.key});
@@ -48,6 +49,14 @@ class ExploreProductsGrid extends StatelessWidget {
           name: 'Beverages',
           color: const Color(0xffB7DFF5).withOpacity(0.15),
           borderColor: const Color(0xffB7DFF5),
+          onTap: () {
+            Navigator.push (
+              context,
+              MaterialPageRoute(
+                builder: (context) => const BeveragesScreen(),
+              )
+            );
+          },
         ),
         _buildCategoryCard(
           image: 'assets/image/bakery and snacks.png',

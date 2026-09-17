@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app_task10/widgets/check_bottom_sheet.dart';
 import '../widgets/cart_item.dart';
 import '../widgets/custom_button.dart';
 
@@ -67,7 +68,12 @@ class CartScreen extends StatelessWidget {
               child: CustomButton(
                 text: 'Go to Checkout',
                 onTap: () {
-                  // فتح Checkout Sheet
+                  showModalBottomSheet(
+                    context: context, 
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
+                    builder: (context) => const CheckBottomSheet(),
+                  );
                 },
               ),
             ),

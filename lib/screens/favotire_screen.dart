@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app_task10/widgets/order_failed_dialog.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/favorite_item.dart';
 
@@ -74,7 +75,11 @@ class FavoriteScreen extends StatelessWidget {
               child: CustomButton(
                 text: 'Add All To Cart',
                 onTap: () {
-                  // تنفيذ إضافة الكل للسلة
+                  showDialog(
+                    context: context,
+                    barrierDismissible: true,
+                    builder: (context) => const OrderFailedDialog(),
+                  );
                 },
               ),
             ),
