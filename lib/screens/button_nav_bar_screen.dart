@@ -19,7 +19,7 @@ class _ButtonNavBarScreenState extends State<ButtonNavBarScreen> {
     ShopScreen(),
     ExploreScreen(),
     CartScreen(),
-    FavotireScreen(),
+    FavoriteScreen(),
     AccountScreen(),
   ];
 
