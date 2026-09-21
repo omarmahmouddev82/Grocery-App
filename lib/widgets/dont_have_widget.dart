@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DontHaveWidget extends StatelessWidget {
   final String questionText;
@@ -19,20 +20,20 @@ class DontHaveWidget extends StatelessWidget {
       children: [
         Text(
           questionText,
-          style: const TextStyle(
-            fontSize: 14,
+          style: TextStyle(
+            fontSize: 14.sp,
             fontWeight: FontWeight.w600,
-            color: Color(0xff000000),
+            color: const Color(0xff000000),
           ),
         ),
         GestureDetector(
           onTap: onTap,
           child: Text(
             actionText,
-            style: const TextStyle(
-              fontSize: 14,
+            style: TextStyle(
+              fontSize: 14.sp,
               fontWeight: FontWeight.w600,
-              color: Color(0xff53B175),
+              color: const Color(0xff53B175),
             ),
           ),
         ),

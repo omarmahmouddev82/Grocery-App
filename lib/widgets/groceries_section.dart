@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/screens/shop_screen.dart';
 import 'package:grocery_app_task10/widgets/product_card.dart';
 
@@ -37,23 +38,23 @@ class GroceriesSection extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.71),
+          padding: EdgeInsets.symmetric(horizontal: 24.71.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
                 "Groceries",
                 style: TextStyle(
-                  color: Color(0xff181725),
-                  fontSize: 24,
+                  color: const Color(0xff181725),
+                  fontSize: 24.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
                 "See all",
                 style: TextStyle(
-                  color: Color(0xff53B175),
-                  fontSize: 16,
+                  color: const Color(0xff53B175),
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -61,39 +62,36 @@ class GroceriesSection extends StatelessWidget {
           ),
         ),
 
-        SizedBox(height: 20),
+        SizedBox(height: 20.h),
 
         SizedBox(
-          height: 105,
+          height: 105.h,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 24.71),
+            padding: EdgeInsets.symmetric(horizontal: 24.71.w),
             child: Row(
               children: [
                 Container(
-                  width: 248,
-                  height: 105,
-                  padding: const EdgeInsets.all(16),
+                  width: 248.w,
+                  height: 105.h,
+                  padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
                     color: const Color(0xFFFDEFD9),
-                    borderRadius: BorderRadius.circular(18),
+                    borderRadius: BorderRadius.circular(18.r),
                   ),
-
                   child: Row(
                     children: [
                       Image.asset(
                         "assets/image/pulses.png",
-                        width: 70,
-                        height: 70,
+                        width: 70.w,
+                        height: 70.h,
                       ),
-
-                      SizedBox(width: 15),
-
-                      const Text(
+                      SizedBox(width: 15.w),
+                      Text(
                         "Pulses",
                         style: TextStyle(
-                          color: Color(0xff3E423F),
-                          fontSize: 20,
+                          color: const Color(0xff3E423F),
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -101,31 +99,29 @@ class GroceriesSection extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(width: 15),
+                SizedBox(width: 15.w),
 
                 Container(
-                  width: 248,
-                  height: 105,
-                  padding: EdgeInsets.all(16),
+                  width: 248.w,
+                  height: 105.h,
+                  padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
-                    color: Color(0xFFE2F6EA),
-                    borderRadius: BorderRadius.circular(18),
+                    color: const Color(0xFFE2F6EA),
+                    borderRadius: BorderRadius.circular(18.r),
                   ),
                   child: Row(
                     children: [
                       Image.asset(
                         "assets/image/rice.png",
-                        width: 70,
-                        height: 70,
+                        width: 70.w,
+                        height: 70.h,
                       ),
-
-                      SizedBox(width: 15),
-
-                      const Text(
+                      SizedBox(width: 15.w),
+                      Text(
                         "Rice",
                         style: TextStyle(
-                          color: Color(0xff3E423F),
-                          fontSize: 20,
+                          color: const Color(0xff3E423F),
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -137,16 +133,16 @@ class GroceriesSection extends StatelessWidget {
           ),
         ),
 
-        SizedBox(height: 20),
+        SizedBox(height: 20.h),
 
         SizedBox(
-          height: 250,
+          height: 250.h,
           child: ListView.separated(
-            padding: const EdgeInsets.symmetric(horizontal: 24.71),
+            padding: EdgeInsets.symmetric(horizontal: 24.71.w),
             physics: const AlwaysScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemCount: groceries.length,
-            separatorBuilder: (context, index) => const SizedBox(width: 15),
+            separatorBuilder: (context, index) => SizedBox(width: 15.w),
             itemBuilder: (context, index) {
               final item = groceries[index];
 

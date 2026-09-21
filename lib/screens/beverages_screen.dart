@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/screens/filter_screen.dart';
 import 'package:grocery_app_task10/widgets/beverages.dart';
 
@@ -11,30 +12,30 @@ class BeveragesScreen extends StatelessWidget {
       backgroundColor: Colors.white,
 
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(72),
+        preferredSize: Size.fromHeight(72.h),
         child: Padding(
-          padding: const EdgeInsets.only(top: 24, left: 16, right: 16),
+          padding: EdgeInsets.only(top: 24.h, left: 16.w, right: 16.w),
           child: AppBar(
             backgroundColor: Colors.white,
             elevation: 0,
             centerTitle: true,
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 20),
+              icon: Icon(Icons.arrow_back_ios, color: Colors.black, size: 20.sp),
               onPressed: () => Navigator.pop(context),
             ),
-            title: const Text(
+            title: Text(
               'Beverages',
-              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18.sp),
             ),
             actions: [
               IconButton(
-                icon: const Icon(Icons.tune, color: Colors.black),
+                icon: Icon(Icons.tune, color: Colors.black, size: 24.sp),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => FilterScreen(),
-                    )
+                      builder: (context) => const FilterScreen(),
+                    ),
                   );
                 },
               ),
@@ -43,9 +44,9 @@ class BeveragesScreen extends StatelessWidget {
         ),
       ),
 
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-        child: Beverages(),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+        child: const Beverages(),
       ),
     );
   }

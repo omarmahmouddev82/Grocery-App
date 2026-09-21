@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // 👈 1. استيراد الباكيدج
 import 'package:grocery_app_task10/screens/splash_screen.dart';
 
 class GroceryApp extends StatelessWidget {
@@ -6,9 +7,17 @@ class GroceryApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+    return ScreenUtilInit(
+      designSize: const Size(414, 896),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: child,
+        );
+      },
+      child: const SplashScreen(),
     );
   }
 }

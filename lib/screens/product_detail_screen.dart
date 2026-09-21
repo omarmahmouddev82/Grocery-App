@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/widgets/custom_button.dart';
 import 'package:grocery_app_task10/widgets/product_header.dart';
 import 'package:grocery_app_task10/widgets/product_info.dart';
@@ -33,12 +34,20 @@ class ProductDetailScreen extends StatelessWidget {
         backgroundColor: const Color(0xFFF2F3F2),
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black, size: 20),
+          icon: Icon(
+            Icons.arrow_back_ios_new, 
+            color: Colors.black, 
+            size: 20.sp
+          ),
           onPressed: () => Navigator.pop(context),
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.share_outlined, color: Colors.black),
+            icon: Icon(
+              Icons.share_outlined, 
+              color: Colors.black, 
+              size: 24.sp
+            ),
             onPressed: () {},
           ),
         ],
@@ -48,6 +57,7 @@ class ProductDetailScreen extends StatelessWidget {
           children: [
             Expanded(
               child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
                 child: Column(
                   children: [
                     ProductHeader(
@@ -56,14 +66,14 @@ class ProductDetailScreen extends StatelessWidget {
                       price: product.price,
                       imagePath: product.imagePath,
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     ProductInfo(description: product.description),
                   ],
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: EdgeInsets.all(25.0.r),
               child: CustomButton(
                 text: "Add To Basket",
                 onTap: () {},

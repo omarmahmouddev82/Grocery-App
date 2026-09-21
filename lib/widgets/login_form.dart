@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -7,33 +8,47 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 40),
+        SizedBox(height: 40.h),
         TextFormField(
-          decoration: const InputDecoration(
+          style: TextStyle(fontSize: 18.sp),
+          decoration: InputDecoration(
             labelText: "Email",
-            labelStyle: TextStyle(color: Color(0xFF7C7C7C)),
-            floatingLabelStyle: TextStyle(color: Color(0xFF53B175)),
-            enabledBorder: UnderlineInputBorder(
+            labelStyle: TextStyle(
+              color: const Color(0xFF7C7C7C), 
+              fontSize: 16.sp
+            ),
+            floatingLabelStyle: TextStyle(
+              color: const Color(0xFF53B175), 
+              fontSize: 16.sp
+            ),
+            enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
                 color: Color(0xFFE2E2E2),
               ),
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
                 color: Color(0xFF53B175),
               ),
             ),
           ),
         ),
-        const SizedBox(height: 30),
+        SizedBox(height: 30.h),
 
         // Password
         TextFormField(
           obscureText: true,
+          style: TextStyle(fontSize: 18.sp),
           decoration: InputDecoration(
             labelText: "Password",
-            labelStyle: const TextStyle(color: Color(0xFF7C7C7C)),
-            floatingLabelStyle: const TextStyle(color: Color(0xFF53B175)),
+            labelStyle: TextStyle(
+              color: const Color(0xFF7C7C7C), 
+              fontSize: 16.sp
+            ),
+            floatingLabelStyle: TextStyle(
+              color: const Color(0xFF53B175), 
+              fontSize: 16.sp
+            ),
             enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
                 color: Color(0xFFE2E2E2),
@@ -45,22 +60,24 @@ class LoginForm extends StatelessWidget {
               ),
             ),
             suffixIcon: IconButton(
-              icon: const Icon(Icons.visibility_off),
+              icon: Icon(Icons.visibility_off, size: 22.sp),
               onPressed: () {},
             ),
           ),
         ),
-        const SizedBox(height: 20),
-        const Align(
+        SizedBox(height: 20.h),
+        Align(
           alignment: Alignment.centerRight,
           child: Text(
             "Forgot Password?",
             style: TextStyle(
-              color: Color(0xFF181725),
+              color: const Color(0xFF181725),
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: 20.h),
       ],
     );
   }

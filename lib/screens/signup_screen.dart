@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/screens/button_nav_bar_screen.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/dont_have_widget.dart';
@@ -15,7 +16,7 @@ class SignUpScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
+            padding: EdgeInsets.symmetric(horizontal: 25.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -31,11 +32,12 @@ class SignUpScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const ButtonNavBarScreen(),
-                      )
+                      ),
                     );
                   },
                 ),
-                const SizedBox(height: 25),
+                SizedBox(height: 25.h),
+                
                 DontHaveWidget(
                   questionText: "Already have an account? ",
                   actionText: "Log In",
@@ -43,7 +45,7 @@ class SignUpScreen extends StatelessWidget {
                     Navigator.pop(context);
                   },
                 ),
-                const SizedBox(height: 25),
+                SizedBox(height: 25.h),
               ],
             ),
           ),

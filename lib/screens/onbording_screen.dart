@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/screens/login_screen.dart';
 import 'package:grocery_app_task10/widgets/custom_button.dart';
 
@@ -10,7 +11,6 @@ class OnBordingScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // 1. صورة الخلفية مالية الشاشة
           Image.asset(
             'assets/image/onbording image.png',
             fit: BoxFit.cover,
@@ -18,39 +18,37 @@ class OnBordingScreen extends StatelessWidget {
             height: double.infinity,
           ),
 
-          // 2. المحتوى فوق الخلفية
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
+            padding: EdgeInsets.symmetric(horizontal: 25.w),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Image.asset(
                   'assets/image/carrot white.png',
-                  width: 48,
-                  height: 56,
+                  width: 48.w,
+                  height: 56.h,
                 ),
-                const SizedBox(height: 35),
-                const Text(
+                SizedBox(height: 35.h),
+                Text(
                   'Welcome\nto our store',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 48,
+                    fontSize: 48.sp,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const SizedBox(height: 12),
-                const Text(
+                SizedBox(height: 12.h),
+                Text(
                   'Get your groceries as fast as one hour',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Color(0xFFFCFCFC),
-                    fontSize: 16,
+                    color: const Color(0xFFFCFCFC),
+                    fontSize: 16.sp,
                   ),
                 ),
-                const SizedBox(height: 25),
+                SizedBox(height: 25.h),
 
-                // 3. زر الانتقال
                 CustomButton(
                   text: 'Get Started',
                   onTap: () {
@@ -62,7 +60,7 @@ class OnBordingScreen extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(height: 90),
+                SizedBox(height: 90.h),
               ],
             ),
           ),

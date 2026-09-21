@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FavoriteItem extends StatelessWidget {
   final String image;
@@ -24,31 +25,31 @@ class FavoriteItem extends StatelessWidget {
         children: [
           Image.asset(
             image,
-            width: 50,
-            height: 50,
+            width: 50.w,
+            height: 50.h,
             fit: BoxFit.contain,
             errorBuilder: (context, error, stackTrace) =>
-                const Icon(Icons.fastfood, size: 40, color: Colors.grey),
+                Icon(Icons.fastfood, size: 40.sp, color: Colors.grey),
           ),
-          const SizedBox(width: 20),
+          SizedBox(width: 20.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   name,
-                  style: const TextStyle(
-                    fontSize: 16,
+                  style: TextStyle(
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xff181725),
+                    color: const Color(0xff181725),
                   ),
                 ),
-                const SizedBox(height: 4),
+                SizedBox(height: 4.h),
                 Text(
                   quantity,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Color(0xff7C7C7C),
+                  style: TextStyle(
+                    fontSize: 14.sp,
+                    color: const Color(0xff7C7C7C),
                   ),
                 ),
               ],
@@ -56,17 +57,17 @@ class FavoriteItem extends StatelessWidget {
           ),
           Text(
             price,
-            style: const TextStyle(
-              fontSize: 16,
+            style: TextStyle(
+              fontSize: 16.sp,
               fontWeight: FontWeight.bold,
-              color: Color(0xff181725),
+              color: const Color(0xff181725),
             ),
           ),
-          const SizedBox(width: 10),
-          const Icon(
+          SizedBox(width: 10.w),
+          Icon(
             Icons.chevron_right,
-            color: Color(0xff181725),
-            size: 24,
+            color: const Color(0xff181725),
+            size: 24.sp,
           ),
         ],
       ),

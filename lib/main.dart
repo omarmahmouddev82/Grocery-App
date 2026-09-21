@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'grocery_app.dart';
 import 'package:flutter/services.dart';
+import 'grocery_app.dart';
 
-void main () {
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
-    
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
     ),
   );
-  runApp(GroceryApp());
+  runApp(const GroceryApp());
 }

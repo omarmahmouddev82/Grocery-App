@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartItem extends StatelessWidget {
   final String image;
@@ -22,13 +23,13 @@ class CartItem extends StatelessWidget {
       children: [
         Image.asset(
           image,
-          width: 65,
-          height: 65,
+          width: 65.w,
+          height: 65.h,
           fit: BoxFit.contain,
           errorBuilder: (context, error, stackTrace) =>
-              const Icon(Icons.fastfood, size: 50, color: Colors.grey),
+              Icon(Icons.fastfood, size: 50.sp, color: Colors.grey),
         ),
-        const SizedBox(width: 15),
+        SizedBox(width: 15.w),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,48 +39,48 @@ class CartItem extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: const TextStyle(
-                      fontSize: 16,
+                    style: TextStyle(
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xff181725),
+                      color: const Color(0xff181725),
                     ),
                   ),
                   GestureDetector(
                     onTap: onDelete,
-                    child: const Icon(Icons.close, color: Color(0xff7C7C7C), size: 20),
+                    child: Icon(Icons.close, color: const Color(0xff7C7C7C), size: 20.sp),
                   ),
                 ],
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4.h),
               Text(
                 quantity,
-                style: const TextStyle(
-                  fontSize: 14,
-                  color: Color(0xff7C7C7C),
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  color: const Color(0xff7C7C7C),
                 ),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
                       _buildCounterBtn(Icons.remove),
-                      const SizedBox(width: 12),
-                      const Text(
+                      SizedBox(width: 12.w),
+                      Text(
                         '1',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: 12.w),
                       _buildCounterBtn(Icons.add, isAdd: true),
                     ],
                   ),
                   Text(
                     price,
-                    style: const TextStyle(
-                      fontSize: 18,
+                    style: TextStyle(
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xff181725),
+                      color: const Color(0xff181725),
                     ),
                   ),
                 ],
@@ -93,14 +94,14 @@ class CartItem extends StatelessWidget {
 
   Widget _buildCounterBtn(IconData icon, {bool isAdd = false}) {
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding: EdgeInsets.all(8.r),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(14.r),
         border: Border.all(color: const Color(0xffE2E2E2)),
       ),
       child: Icon(
         icon,
-        size: 18,
+        size: 18.sp,
         color: isAdd ? const Color(0xff53B175) : const Color(0xffB3B3B3),
       ),
     );

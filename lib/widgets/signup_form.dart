@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'terms_and_privacy_widget.dart';
 
 class SignUpForm extends StatelessWidget {
@@ -8,54 +9,74 @@ class SignUpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 40),
+        SizedBox(height: 40.h),
+        // Username
         TextFormField(
+          style: TextStyle(fontSize: 18.sp),
           onTapOutside: (value) => FocusScope.of(context).unfocus(),
-          decoration: const InputDecoration(
+          decoration: InputDecoration(
             labelText: "Username",
             labelStyle: TextStyle(
-                color: Color(0xFF7C7C7C)
-              ),
+              color: const Color(0xFF7C7C7C),
+              fontSize: 16.sp,
+            ),
             floatingLabelStyle: TextStyle(
-              color: Color(0xFF53B175)
+              color: const Color(0xFF53B175),
+              fontSize: 16.sp,
             ),
-            enabledBorder: UnderlineInputBorder(
+            enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Color(0xffE2E2E2)
+                color: Color(0xffE2E2E2),
               ),
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Color(0xFF53B175)
+                color: Color(0xFF53B175),
               ),
             ),
           ),
         ),
-        const SizedBox(height: 30),
+        SizedBox(height: 30.h),
+
         // Email
         TextFormField(
+          style: TextStyle(fontSize: 18.sp),
           onTapOutside: (value) => FocusScope.of(context).unfocus(),
-          decoration: const InputDecoration(
+          decoration: InputDecoration(
             labelText: "Email",
-            labelStyle: TextStyle(color: Color(0xFF7C7C7C)),
-            floatingLabelStyle: TextStyle(color: Color(0xFF53B175)),
-            enabledBorder: UnderlineInputBorder(
+            labelStyle: TextStyle(
+              color: const Color(0xFF7C7C7C),
+              fontSize: 16.sp,
+            ),
+            floatingLabelStyle: TextStyle(
+              color: const Color(0xFF53B175),
+              fontSize: 16.sp,
+            ),
+            enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Color(0xffE2E2E2)),
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Color(0xFF53B175)),
             ),
           ),
         ),
-        const SizedBox(height: 30),
+        SizedBox(height: 30.h),
+        
         // Password
         TextFormField(
           obscureText: true,
+          style: TextStyle(fontSize: 18.sp),
           onTapOutside: (value) => FocusScope.of(context).unfocus(),
           decoration: InputDecoration(
             labelText: "Password",
-            labelStyle: const TextStyle(color: Color(0xFF7C7C7C)),
-            floatingLabelStyle: const TextStyle(color: Color(0xFF53B175)),
+            labelStyle: TextStyle(
+              color: const Color(0xFF7C7C7C),
+              fontSize: 16.sp,
+            ),
+            floatingLabelStyle: TextStyle(
+              color: const Color(0xFF53B175),
+              fontSize: 16.sp,
+            ),
             enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Color(0xffE2E2E2)),
             ),
@@ -63,14 +84,14 @@ class SignUpForm extends StatelessWidget {
               borderSide: BorderSide(color: Color(0xFF53B175)),
             ),
             suffixIcon: IconButton(
-              icon: const Icon(Icons.visibility_off),
+              icon: Icon(Icons.visibility_off, size: 22.sp),
               onPressed: () {},
             ),
           ),
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: 20.h),
         const TermsAndPrivacyWidget(),
-        const SizedBox(height: 30),
+        SizedBox(height: 30.h),
       ],
     );
   }

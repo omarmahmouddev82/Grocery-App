@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/widgets/check_bottom_sheet.dart';
 import '../widgets/cart_item.dart';
 import '../widgets/custom_button.dart';
@@ -14,22 +15,22 @@ class CartScreen extends StatelessWidget {
         child: Column(
           children: [
             // Header
-            const SizedBox(height: 24),
-            const Text(
+            SizedBox(height: 24.h),
+            Text(
               'My Cart',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
-                color: Color(0xff181725),
+                color: const Color(0xff181725),
               ),
             ),
-            const SizedBox(height: 24),
-            const Divider(color: Color(0xffE2E2E2), height: 4),
+            SizedBox(height: 24.h),
+            Divider(color: const Color(0xffE2E2E2), height: 4.h),
 
             // Cart Items List
             Expanded(
               child: ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
                 children: [
                   const CartItem(
                     image: 'assets/image/bell pepper red.png',
@@ -37,21 +38,21 @@ class CartScreen extends StatelessWidget {
                     quantity: '1kg, Price',
                     price: '\$4.99',
                   ),
-                  const Divider(color: Color(0xffE2E2E2), height: 48),
+                  Divider(color: const Color(0xffE2E2E2), height: 48.h),
                   const CartItem(
                     image: 'assets/image/egg chicken red.png',
                     name: 'Egg Chicken Red',
                     quantity: '4pcs, Price',
                     price: '\$1.99',
                   ),
-                  const Divider(color: Color(0xffE2E2E2), height: 48),
+                  Divider(color: const Color(0xffE2E2E2), height: 48.h),
                   const CartItem(
                     image: 'assets/image/organic bananas.png',
                     name: 'Organic Bananas',
                     quantity: '12kg, Price',
                     price: '\$3.00',
                   ),
-                  const Divider(color: Color(0xffE2E2E2), height: 48),
+                  Divider(color: const Color(0xffE2E2E2), height: 48.h),
                   const CartItem(
                     image: 'assets/image/ginger.png',
                     name: 'Ginger',
@@ -64,7 +65,7 @@ class CartScreen extends StatelessWidget {
 
             // Checkout Button
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
               child: CustomButton(
                 text: 'Go to Checkout',
                 onTap: () {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductHeader extends StatefulWidget {
   final String title;
@@ -29,28 +30,28 @@ class _ProductHeaderState extends State<ProductHeader> {
       children: [
         // regtangle
         Container(
-          height: 300,
+          height: 300.h,
           width: double.infinity,
-          decoration: const BoxDecoration(
-            color: Color(0xFFF2F3F2),
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(25)),
+          decoration: BoxDecoration(
+            color: const Color(0xFFF2F3F2),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(25.r)),
           ),
           // image
           child: Center(
             child: Image.asset(
               widget.imagePath,
-              width: 330,
-              height: 200,
+              width: 330.w,
+              height: 200.h,
               fit: BoxFit.contain,
               filterQuality: FilterQuality.high,
             ),
           ),
         ),
-        const SizedBox(height: 24),
+        SizedBox(height: 24.h),
 
         // product name + subtitle + favorite
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: EdgeInsets.symmetric(horizontal: 24.0.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -59,18 +60,18 @@ class _ProductHeaderState extends State<ProductHeader> {
                 children: [
                   Text(
                     widget.title,
-                    style: const TextStyle(
-                      fontSize: 24,
+                    style: TextStyle(
+                      fontSize: 24.sp,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF181725),
+                      color: const Color(0xFF181725),
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  SizedBox(height: 4.h),
                   Text(
                     widget.subtitle,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: Color(0xFF7C7C7C),
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      color: const Color(0xFF7C7C7C),
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -81,7 +82,7 @@ class _ProductHeaderState extends State<ProductHeader> {
                 icon: Icon(
                   isFavorite ? Icons.favorite : Icons.favorite_border,
                   color: isFavorite ? Colors.red : const Color(0xFF7C7C7C),
-                  size: 28,
+                  size: 28.sp,
                 ),
                 onPressed: () {
                   setState(() {
@@ -92,11 +93,11 @@ class _ProductHeaderState extends State<ProductHeader> {
             ],
           ),
         ),
-        const SizedBox(height: 25),
+        SizedBox(height: 25.h),
 
         // counter + price
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: EdgeInsets.symmetric(horizontal: 24.0.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -106,36 +107,41 @@ class _ProductHeaderState extends State<ProductHeader> {
                     onPressed: () {
                       if (quantity > 1) setState(() => quantity--);
                     },
-                    icon: const Icon(Icons.remove, color: Color(0xFFB3B3B3)),
+                    icon: Icon(Icons.remove, color: const Color(0xFFB3B3B3), size: 24.sp),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
                     decoration: BoxDecoration(
                       border: Border.all(color: const Color(0xFFE2E2E2)),
-                      borderRadius: BorderRadius.circular(24),
+                      borderRadius: BorderRadius.circular(24.r),
                     ),
                     child: Text(
                       '$quantity',
-                      style: const TextStyle(
-                        fontSize: 18,
+                      style: TextStyle(
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                   IconButton(
                     onPressed: () {
-                      setState(() => quantity++);
+                      setState(() => quantity++
+                      );
                     },
-                    icon: const Icon(Icons.add, color: Color(0xFF53B175)),
+                    icon: Icon(
+                      Icons.add, 
+                      color: const Color(0xFF53B175), 
+                      size: 24.sp
+                    ),
                   ),
                 ],
               ),
               Text(
                 '\$${widget.price}',
-                style: const TextStyle(
-                  fontSize: 24,
+                style: TextStyle(
+                  fontSize: 24.sp,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF181725),
+                  color: const Color(0xFF181725),
                 ),
               ),
             ],

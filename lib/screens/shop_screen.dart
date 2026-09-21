@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/widgets/best_selling_section.dart';
 import 'package:grocery_app_task10/widgets/exclusive_offers_section.dart';
 import 'package:grocery_app_task10/widgets/groceries_section.dart';
@@ -30,49 +31,51 @@ class ShopScreen extends StatelessWidget {
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
-            children: const [
+            children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.71),
+                padding: EdgeInsets.symmetric(horizontal: 24.71.w),
                 child: Column(
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(height: 16.h),
                     Image(
-                      image: AssetImage("assets/image/carrot.png"),
-                      width: 30,
+                      image: const AssetImage("assets/image/carrot.png"),
+                      width: 30.w,
+                      height: 30.h,
                     ),
-                    SizedBox(height: 7.6),
+                    SizedBox(height: 7.6.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
                           Icons.location_on,
-                          color: Color(0xff4C4F4D),
+                          color: const Color(0xff4C4F4D),
+                          size: 20.sp,
                         ),
-                        SizedBox(width: 4),
+                        SizedBox(width: 4.w),
                         Text(
                           "Dhaka, Banassre",
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xff4C4F4D),
+                            color: const Color(0xff4C4F4D),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
-                    HomeSearchField(),
-                    SizedBox(height: 20),
-                    HomeSlider(),
-                    SizedBox(height: 30),
+                    SizedBox(height: 20.h),
+                    const HomeSearchField(),
+                    SizedBox(height: 20.h),
+                    const HomeSlider(),
+                    SizedBox(height: 30.h),
                   ],
                 ),
               ),
-              ExclusiveOffersSection(),
-              SizedBox(height: 20),
-              BestSellingSection(),
-              SizedBox(height: 30),
-              GroceriesSection(),
-              SizedBox(height: 30),
+              const ExclusiveOffersSection(),
+              SizedBox(height: 20.h),
+              const BestSellingSection(),
+              SizedBox(height: 30.h),
+              const GroceriesSection(),
+              SizedBox(height: 30.h),
             ],
           ),
         ),

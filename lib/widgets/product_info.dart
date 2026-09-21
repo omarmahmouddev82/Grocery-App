@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductInfo extends StatelessWidget {
   final String description;
@@ -11,7 +12,7 @@ class ProductInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      padding: EdgeInsets.symmetric(horizontal: 24.0.w),
       child: Column(
         children: [
           const Divider(color: Color(0xFFE2E2E2), height: 1),
@@ -21,25 +22,24 @@ class ProductInfo extends StatelessWidget {
             data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
             child: ExpansionTile(
               tilePadding: EdgeInsets.zero,
-              title: const Text(
+              title: Text(
                 "Product Detail",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF181725),
+                  color: const Color(0xFF181725),
                 ),
               ),
-              // description
               children: [
                 Text(
                   description,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    color: Color(0xFF7C7C7C),
+                  style: TextStyle(
+                    fontSize: 13.sp,
+                    color: const Color(0xFF7C7C7C),
                     height: 1.5,
                   ),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10.h),
               ],
             ),
           ),
@@ -48,34 +48,38 @@ class ProductInfo extends StatelessWidget {
           // Nutritions
           ListTile(
             contentPadding: EdgeInsets.zero,
-            title: const Text(
+            title: Text(
               "Nutritions",
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF181725),
+                color: const Color(0xFF181725),
               ),
             ),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     color: const Color(0xFFEBEBEB),
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.circular(5.r),
                   ),
-                  child: const Text(
+                  child: Text(
                     "100gr",
                     style: TextStyle(
-                      fontSize: 12,
-                      color: Color(0xFF7C7C7C),
+                      fontSize: 12.sp,
+                      color: const Color(0xFF7C7C7C),
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
-                const SizedBox(width: 8),
-                const Icon(Icons.arrow_forward_ios, size: 16, color: Color(0xFF181725)),
+                SizedBox(width: 8.w),
+                Icon(
+                  Icons.arrow_forward_ios, 
+                  color: const Color(0xFF181725),
+                  size: 16.sp, 
+                ),
               ],
             ),
             onTap: () {},
@@ -85,28 +89,33 @@ class ProductInfo extends StatelessWidget {
           // Review
           ListTile(
             contentPadding: EdgeInsets.zero,
-            title: const Text(
+            title: Text(
               "Review",
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF181725),
+                color: const Color(0xFF181725),
               ),
             ),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Row(
-                  children: List.generate(5,(index) => const Icon(
-                    
+                  children: List.generate(
+                    5,
+                    (index) => Icon(
                       Icons.star,
-                      color: Color(0xFFF3603F),
-                      size: 18,
+                      color: const Color(0xFFF3603F),
+                      size: 18.sp,
                     ),
                   ),
                 ),
-                const SizedBox(width: 8),
-                const Icon(Icons.arrow_forward_ios, size: 16, color: Color(0xFF181725)),
+                SizedBox(width: 8.w),
+                Icon(
+                  Icons.arrow_forward_ios, 
+                  color: const Color(0xFF181725),
+                  size: 16.sp, 
+                ),
               ],
             ),
             onTap: () {},

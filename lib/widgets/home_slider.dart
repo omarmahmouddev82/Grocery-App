@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeSlider extends StatefulWidget {
@@ -11,14 +12,15 @@ class HomeSlider extends StatefulWidget {
 
 class _HomeSliderState extends State<HomeSlider> {
   int activeIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: AlignmentGeometry.bottomCenter,
+      alignment: Alignment.bottomCenter,
       children: [
         CarouselSlider(
           options: CarouselOptions(
-            height: 119.0,
+            height: 119.0.h,
             autoPlay: true,
             autoPlayInterval: const Duration(seconds: 3),
             viewportFraction: 1,
@@ -29,31 +31,30 @@ class _HomeSliderState extends State<HomeSlider> {
             },
           ),
           items: images.map((i) => Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  alignment: Alignment.bottomCenter,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: Image.network(i).image,
-                    ),
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 8.h),
+                alignment: Alignment.bottomCenter,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16.r),
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: NetworkImage(i),
                   ),
                 ),
-              )
+              ))
               .toList(),
         ),
         Positioned(
-          bottom: 8,
+          bottom: 8.h,
           child: AnimatedSmoothIndicator(
             activeIndex: activeIndex,
             count: images.length,
             effect: ExpandingDotsEffect(
-              activeDotColor: Color(0xff53B175),
+              activeDotColor: const Color(0xff53B175),
               dotColor: Colors.grey,
-              dotHeight: 8,
-              dotWidth: 8,
-              spacing: 4,
+              dotHeight: 8.h,
+              dotWidth: 8.w,
+              spacing: 4.w,
             ),
           ),
         ),

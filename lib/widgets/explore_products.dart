@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/screens/beverages_screen.dart';
 
-class ExploreProductsGrid extends StatelessWidget {
-  const ExploreProductsGrid({super.key});
+class ExploreProducts extends StatelessWidget {
+  const ExploreProducts({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      crossAxisSpacing: 15,
-      mainAxisSpacing: 15,
+      crossAxisSpacing: 15.w,
+      mainAxisSpacing: 15.h,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       childAspectRatio: 0.93,
@@ -50,11 +51,11 @@ class ExploreProductsGrid extends StatelessWidget {
           color: const Color(0xffB7DFF5).withOpacity(0.15),
           borderColor: const Color(0xffB7DFF5),
           onTap: () {
-            Navigator.push (
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => const BeveragesScreen(),
-              )
+              ),
             );
           },
         ),
@@ -84,11 +85,11 @@ class ExploreProductsGrid extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(18),
-          border: Border.all(color: borderColor, width: 1),
+          borderRadius: BorderRadius.circular(18.r),
+          border: Border.all(color: borderColor, width: 1.w),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -98,17 +99,17 @@ class ExploreProductsGrid extends StatelessWidget {
                 image,
                 fit: BoxFit.contain,
                 errorBuilder: (context, error, stackTrace) =>
-                    const Icon(Icons.fastfood, size: 40, color: Colors.grey),
+                    Icon(Icons.fastfood, size: 40.sp, color: Colors.grey),
               ),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             Text(
               name,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 16,
+              style: TextStyle(
+                fontSize: 16.sp,
                 fontWeight: FontWeight.bold,
-                color: Color(0xff181725),
+                color: const Color(0xff181725),
               ),
             ),
           ],

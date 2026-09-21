@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widgets/explore_header.dart';
 import '../widgets/explore_products.dart';
 
@@ -13,14 +14,14 @@ class ExploreScreen extends StatelessWidget {
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.70),
+            padding: EdgeInsets.symmetric(horizontal: 24.70.w),
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               child: Column(
-                children: const [
-                  ExploreHeader(),
-                  ExploreProductsGrid(),
-                  SizedBox(height: 30),
+                children: [
+                  const ExploreHeader(),
+                  const ExploreProducts(),
+                  SizedBox(height: 30.h),
                 ],
               ),
             ),

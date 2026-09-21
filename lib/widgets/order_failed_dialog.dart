@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/widgets/custom_button.dart';
 
 class OrderFailedDialog extends StatelessWidget {
@@ -8,12 +9,12 @@ class OrderFailedDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(30.r),
       ),
       backgroundColor: Colors.white,
-      insetPadding: const EdgeInsets.symmetric(horizontal: 24),
+      insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -22,52 +23,52 @@ class OrderFailedDialog extends StatelessWidget {
               alignment: Alignment.topLeft,
               child: IconButton(
                 onPressed: () => Navigator.pop(context),
-                icon: const Icon(
+                icon: Icon(
                   Icons.close_rounded,
-                  color: Color(0xFF181725),
-                  size: 24,
+                  color: const Color(0xFF181725),
+                  size: 24.sp,
                 ),
               ),
             ),
 
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
             // Image Illustration
             Padding(
-              padding: const EdgeInsets.only(right: 16),
+              padding: EdgeInsets.only(right: 16.w),
               child: Image.asset(
                 'assets/image/oops! order failed.png',
-                height: 180,
+                height: 180.h,
                 fit: BoxFit.contain,
               ),
             ),
 
-            const SizedBox(height: 25),
+            SizedBox(height: 25.h),
 
             // Title
-            const Text(
+            Text(
               'Oops! Order Failed',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 24.sp,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF181725),
+                color: const Color(0xFF181725),
               ),
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             // Subtitle
-            const Text(
+            Text(
               'Something went terribly wrong.',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 15,
-                color: Color(0xFF7C7C7C),
+                fontSize: 15.sp,
+                color: const Color(0xFF7C7C7C),
               ),
             ),
 
-            const SizedBox(height: 30),
+            SizedBox(height: 30.h),
 
             // Please Try Again Button
             CustomButton(
@@ -77,19 +78,19 @@ class OrderFailedDialog extends StatelessWidget {
               },
             ),
 
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
 
             // Back to home Button
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text(
+              child: Text(
                 'Back to home',
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 17.sp,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF181725),
+                  color: const Color(0xFF181725),
                 ),
               ),
             ),

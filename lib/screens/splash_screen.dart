@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/screens/onbording_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -31,8 +32,8 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Image.asset(
           'assets/image/logo splash.png',
-          width: 267.42,
-          height: 68.61,
+          width: 267.42.w,
+          height: 68.61.h,
         ),
       ),
     );

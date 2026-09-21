@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/screens/account_screen.dart';
 import 'package:grocery_app_task10/screens/cart_screen.dart';
 import 'package:grocery_app_task10/screens/explore_screen.dart';
@@ -40,14 +41,17 @@ class _ButtonNavBarScreenState extends State<ButtonNavBarScreen> {
           });
         },
         backgroundColor: Colors.white,
-        selectedItemColor: Color(0xff53B175),
+        selectedItemColor: const Color(0xff53B175),
+        selectedFontSize: 12.sp,
+        unselectedFontSize: 12.sp,
+        iconSize: 24.sp,
         type: BottomNavigationBarType.fixed,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.storefront), label: "Shop"),
-          BottomNavigationBarItem(icon: Icon(Icons.manage_search), label: "Explore"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart_outlined), label: "Cart"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite_outline), label: "Favorite"),
-          BottomNavigationBarItem(icon: Icon(Icons.person_3_outlined), label: "Account"),
+          BottomNavigationBarItem(icon: Icon(Icons.storefront, size: 24.sp), label: "Shop"),
+          BottomNavigationBarItem(icon: Icon(Icons.manage_search, size: 24.sp), label: "Explore"),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart_outlined, size: 24.sp), label: "Cart"),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_outline, size: 24.sp), label: "Favorite"),
+          BottomNavigationBarItem(icon: Icon(Icons.person_3_outlined, size: 24.sp), label: "Account"),
         ]
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/screens/order_accepted_screen.dart';
 import 'package:grocery_app_task10/widgets/check_options.dart';
 import 'package:grocery_app_task10/widgets/custom_button.dart';
@@ -10,12 +11,12 @@ class CheckBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      decoration: const BoxDecoration(
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+      decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+          topLeft: Radius.circular(30.r),
+          topRight: Radius.circular(30.r),
         ),
       ),
       child: Column(
@@ -26,13 +27,13 @@ class CheckBottomSheet extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 'Checkout',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
               ),
               IconButton(
                 onPressed: () => Navigator.pop(context),
-                icon: const Icon(Icons.close_rounded, color: Color(0xff181725)),
+                icon: Icon(Icons.close_rounded, color: const Color(0xff181725), size: 24.sp),
               ),
             ],
           ),
@@ -42,13 +43,13 @@ class CheckBottomSheet extends StatelessWidget {
           const Divider(color: Color(0xffE2E2E2), thickness: 1),
           
           // Payment Option
-          const CheakoutOptions(
+          CheakoutOptions(
             title: 'Payment',
             subTille: '',
             trailingWidget: Icon(
               Icons.credit_card_rounded,
-              color: Color(0xff53B175),
-              size: 24,
+              color: const Color(0xff53B175),
+              size: 24.sp,
             ),
           ),
           
@@ -58,13 +59,13 @@ class CheckBottomSheet extends StatelessWidget {
           const CheakoutOptions(title: 'Total Cost', subTille: '\$13.97'),
           const Divider(color: Color(0xffE2E2E2), thickness: 1),
 
-          const SizedBox(height: 15),
+          SizedBox(height: 15.h),
 
           // Terms & Conditions
           RichText(
-            text: const TextSpan(
-              style: TextStyle(fontSize: 14, color: Color(0xff7C7C7C)),
-              children: [
+            text: TextSpan(
+              style: TextStyle(fontSize: 14.sp, color: const Color(0xff7C7C7C)),
+              children: const [
                 TextSpan(text: 'By placing an order you agree to our '),
                 TextSpan(
                   text: 'Terms',
@@ -85,7 +86,7 @@ class CheckBottomSheet extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 20),
+          SizedBox(height: 20.h),
 
           CustomButton(
             text: 'Place Order',
@@ -93,12 +94,12 @@ class CheckBottomSheet extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => OrderAcceptedScreen(),
+                  builder: (context) => const OrderAcceptedScreen(),
                 ),
               );
             },
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app_task10/screens/shop_screen.dart';
 import 'package:grocery_app_task10/widgets/product_card.dart';
 
@@ -37,23 +38,23 @@ class BestSellingSection extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.71),
+          padding: EdgeInsets.symmetric(horizontal: 24.71.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 "Best Selling",
                 style: TextStyle(
-                  color: Color(0xff181725),
-                  fontSize: 24,
+                  color: const Color(0xff181725),
+                  fontSize: 24.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
                 "See all",
                 style: TextStyle(
-                  color: Color(0xff53B175),
-                  fontSize: 16,
+                  color: const Color(0xff53B175),
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -61,16 +62,16 @@ class BestSellingSection extends StatelessWidget {
           ),
         ),
 
-        SizedBox(height: 20),
+        SizedBox(height: 20.h),
 
         SizedBox(
-          height: 250,
+          height: 250.h,
           child: ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 24.71),
+            padding: EdgeInsets.symmetric(horizontal: 24.71.w),
             physics: const AlwaysScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemCount: bestSellingOffers.length,
-            separatorBuilder: (context, index) => SizedBox(width: 15),
+            separatorBuilder: (context, index) => SizedBox(width: 15.w),
             itemBuilder: (context, index) {
               final item = bestSellingOffers[index];
 
